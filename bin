@@ -1,0 +1,27 @@
+#!/bin/bash
+
+environment="anaya"
+
+
+[ -z "$MAGE_ENV" ] && MAGE_ENV=$environment
+
+case "$1" in
+    build)
+        docker-compose -p $MAGE_ENV -f docker-compose.yml build $3
+        cd ..
+        ;;
+    run)
+        docker-compose -p $MAGE_ENV -f docker-compose.yml kill &> /dev/null
+        docker-compose -p $MAGE_ENV -f docker-compose.yml rm --all --force &> /dev/null
+        docker-compose -p $MAGE_ENV -f docker-compose.yml up -d $3
+        ;;
+    up)
+        docker-compose -p $MAGE_ENV -f docker-compose.yml kill &> /dev/null
+        docker-compose -p $MAGE_ENV -f docker-compose.yml rm --all --force &> /dev/null
+        docker-compose -p $MAGE_ENV -f docker-compose.yml up -d $3
+        ;;
+    stop)
+        docker-compose -p $MAGE_ENV -f docker-compose.yml kill #&> /dev/null
+        docker-compose -p $MAGE_ENV -f docker-compose.yml --all --force &< /dev/null
+        ;;
+esac
