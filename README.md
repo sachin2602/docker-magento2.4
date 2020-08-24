@@ -38,7 +38,7 @@ You can change your db password, user and database as per your requirement by ch
 Give write permission to es01 and es02 folder.
 ```
 
-## Run Command on local
+## Run Command on local machine
 ```bash
 sysctl -w vm.max_map_count=262144
 ```
