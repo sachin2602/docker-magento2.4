@@ -33,6 +33,16 @@ php -d memoery_limit=6G bin/magento setup:install --base-url=http://localhost:80
 You can change your db password, user and database as per your requirement by changing the configuration in docker-compose.yml
 ```
 
+## Permission
+```bash
+Give write permission to es01 and es02 folder.
+```
+
+## Run Command on local
+```bash
+sysctl -w vm.max_map_count=262144
+```
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
