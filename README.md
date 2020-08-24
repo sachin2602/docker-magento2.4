@@ -17,6 +17,8 @@ Step 6 -> download the magento 2.4 and place it under src folder as root directo
 Step 7 -> run the below command to install the magento
 ```
 ```bash
+connect the php container first then this below command
+  To connect the container run this command -> docker exec -it container_name /bin/bash
 php -d memoery_limit=6G bin/magento setup:install --base-url=http://localhost:8092/ \
 --db-host=db --db-name=magento2 \
 --db-user=anaya_mage --db-password=anaya_pass \
@@ -41,6 +43,17 @@ Give write permission to es01 and es02 folder.
 ## Run Command on local machine
 ```bash
 sysctl -w vm.max_map_count=262144
+```
+## Common Docker Command
+```bash
+To check the all containers 
+docker ps -a
+
+To Check the log of the containers
+docker logs -f container name
+
+To connect the container
+docker exec -it container_name /bin/bash
 ```
 
 ## Contributing
