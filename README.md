@@ -10,7 +10,7 @@ Adminer
 ```bash
 Step 1 -> Clone this Repostiory on your machine
 Step 2 -> Create the new folder inside dokcer folder -> src
-Step 3 -> go inside the docker folder and open in the terminal
+Step 3 -> go inside the docker-magento2.4 folder and open in the terminal
 Step 4 -> RUN Command -> ./bin build ->  it will pull the required images and will setup the Magento Required Enviorment
 Step 5 -> RUn Command -> ./bin run ->  it will make your system update
 Step 6 -> download the magento 2.4 and place it under src folder as root directory
