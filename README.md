@@ -9,14 +9,16 @@ Adminer
 
 ```bash
 Step 1 -> Clone this Repostiory on your machine
-Step 2 -> Create the new folder inside dokcer folder -> src
-Step 3 -> go inside the docker folder and open in the terminal
+Step 2 -> Create the new folder inside docker-magento2.4 folder -> src
+Step 3 -> go inside the docker-magento2.4 folder and open in the terminal
 Step 4 -> RUN Command -> ./bin build ->  it will pull the required images and will setup the Magento Required Enviorment
 Step 5 -> RUn Command -> ./bin run ->  it will make your system update
 Step 6 -> download the magento 2.4 and place it under src folder as root directory
 Step 7 -> run the below command to install the magento
 ```
 ```bash
+connect the php container first then this below command
+  To connect the container run this command -> docker exec -it container_name /bin/bash
 php -d memoery_limit=6G bin/magento setup:install --base-url=http://localhost:8092/ \
 --db-host=db --db-name=magento2 \
 --db-user=anaya_mage --db-password=anaya_pass \
@@ -31,6 +33,27 @@ php -d memoery_limit=6G bin/magento setup:install --base-url=http://localhost:80
 ## Note
 ```bash
 You can change your db password, user and database as per your requirement by changing the configuration in docker-compose.yml
+```
+
+## Permission
+```bash
+Give write permission to es01 and es02 folder.
+```
+
+## Run Command on local machine
+```bash
+sysctl -w vm.max_map_count=262144
+```
+## Common Docker Command
+```bash
+To check the all containers 
+docker ps -a
+
+To Check the log of the containers
+docker logs -f container name
+
+To connect the container
+docker exec -it container_name /bin/bash
 ```
 
 ## Contributing
