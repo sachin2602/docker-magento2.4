@@ -56,6 +56,13 @@ To connect the container
 docker exec -it container_name /bin/bash
 ```
 
+## Accessing your store
+```bash
+Magento Url -> http://localhost:8092
+Access Database -> http://localhost:8080
+Mail access -> http://localhost:8025
+```
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
